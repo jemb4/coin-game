@@ -57,7 +57,13 @@ function moveUp()
         persona = document.getElementById(`cell-${actualCell}`)
         persona.classList.add("red")
         console.log(actualCell)
-        persona.classList.remove("coin")
+
+        if(persona.classList.contains("coin")) 
+        {    
+            persona.classList.remove("coin");
+            showPoints();
+        } 
+        
     } 
     else 
     {
@@ -67,7 +73,11 @@ function moveUp()
         persona = document.getElementById(`cell-${actualCell}`)
         persona.classList.add("red")
         console.log(actualCell)
-        persona.classList.remove("coin")
+        if(persona.classList.contains("coin")) 
+        {    
+            persona.classList.remove("coin");
+            showPoints();
+        } 
     }
 }
 
@@ -81,7 +91,11 @@ function moveDown()
         persona = document.getElementById(`cell-${actualCell}`)
         persona.classList.add("red")
         console.log(actualCell)
-        persona.classList.remove("coin")
+        if(persona.classList.contains("coin")) 
+        {    
+            persona.classList.remove("coin");
+            showPoints();
+        } 
     }
     else 
     {
@@ -91,7 +105,11 @@ function moveDown()
         persona = document.getElementById(`cell-${actualCell}`)
         persona.classList.add("red")
         console.log(actualCell)
-        persona.classList.remove("coin")
+        if(persona.classList.contains("coin")) 
+        {    
+            persona.classList.remove("coin");
+            showPoints();
+        } 
     }
 }
 
@@ -105,7 +123,11 @@ function moveRight()
         persona = document.getElementById(`cell-${actualCell}`)
         persona.classList.add("red")
         console.log(actualCell)
-        persona.classList.remove("coin")
+        if(persona.classList.contains("coin")) 
+        {    
+            persona.classList.remove("coin");
+            showPoints();
+        } 
     }
     else 
     {
@@ -115,7 +137,11 @@ function moveRight()
         persona = document.getElementById(`cell-${actualCell}`)
         persona.classList.add("red")
         console.log(actualCell)
-        persona.classList.remove("coin")
+        if(persona.classList.contains("coin")) 
+        {    
+            persona.classList.remove("coin");
+            showPoints();
+        } 
     }
 }
 
@@ -129,7 +155,11 @@ function moveLeft()
         persona = document.getElementById(`cell-${actualCell}`)
         persona.classList.add("red")
         console.log(actualCell)
-        persona.classList.remove("coin")
+        if(persona.classList.contains("coin")) 
+        {    
+            persona.classList.remove("coin");
+            showPoints();
+        } 
     }
     else 
     {
@@ -139,7 +169,11 @@ function moveLeft()
         persona = document.getElementById(`cell-${actualCell}`)
         persona.classList.add("red")
         console.log(actualCell)
-        persona.classList.remove("coin")
+        if(persona.classList.contains("coin")) 
+        {    
+            persona.classList.remove("coin");
+            showPoints();
+        } 
     }
 }
 
@@ -168,10 +202,19 @@ randomCoin()
 
 
 //contador:
-let showCounter = document.getElementById("counter"),
-coinCell = document.querySelectorAll(".coin"),
-counter = numeroMonedas - coinCell.length;
-showCounter.innerHTML = `You have <span class="points"> ${counter} </span> coins`
 
-if (coinCell.length === 0){alert("Has ganado")}
+
+function showPoints()
+{
+    let showCounter = document.getElementById("counter"),
+    coinCell = document.querySelectorAll(".coin"),
+    counter = numeroMonedas - coinCell.length;
+
+    showCounter.innerHTML = `You have <span class="points"> ${counter} </span> coins`
+    console.log(coinCell.length)
+}
+
+showPoints()
+
+
 
