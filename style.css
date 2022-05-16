@@ -5,6 +5,8 @@
 #container{
     display: flex;
     align-items: center;
+    margin-left: 30%;
+    margin-top: 5%;
 }
 
 #container-counter{
