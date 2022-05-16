@@ -199,8 +199,6 @@ function randomCoin()
 randomCoin()
 
 
-
-
 //contador:
 
 
@@ -210,11 +208,32 @@ function showPoints()
     coinCell = document.querySelectorAll(".coin"),
     counter = numeroMonedas - coinCell.length;
 
+    if(counter % 5 === 0 && counter !== 0)
+    {
+        showCounter.innerHTML = `You have <span class="points"> ${0} </span> coins`
+        document.getElementById("game+player").classList.toggle("hidden");
+        document.getElementById("container-counter").classList.toggle("hidden");
+        document.getElementById("won").classList.toggle("hidden");
+    }
+    else
+    {
     showCounter.innerHTML = `You have <span class="points"> ${counter} </span> coins`
-    console.log(coinCell.length)
+    }
 }
 
 showPoints()
 
 
+function restartGame() 
+{
+    document.getElementById("game+player").classList.toggle("hidden");
+    document.getElementById("container-counter").classList.toggle("hidden");
+    document.getElementById("won").classList.toggle("hidden");
 
+    gameBoard()
+    randomCoin()
+    
+    persona = document.getElementById(`cell-${actualCell}`);
+    persona.classList.add("red");
+    showCounter.innerHTML = `You have <span class="points"> ${0} </span> coins`
+}
